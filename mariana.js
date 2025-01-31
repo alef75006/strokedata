@@ -63,6 +63,29 @@
     URL.revokeObjectURL(link.href);
   }
 
+  function saveToFile(filename, content) {
+
+    const fs = require("fs") ;
+
+    fs.appendFile(filename, content, (err) => {
+      if (err) throw err ;
+      console.log("Contenu ajouté avec succès !");
+    }) ;
+  }
+
+  function saveToServer(url, content) {  
+    fetch(url, {
+      method: 'POST', // ou 'GET', 'PUT', 'DELETE', etc.
+      headers: {
+      'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ question: content }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => console.error('Erreur:', error));
+  }    
+
   function showResults(){
 
     // gather answer containers from our quiz
@@ -82,8 +105,10 @@
       answerString1 += userAnswer1 + " ";
 
       // Save results
-      saveResults("Mariana.txt", answerString1)
+      //saveToFile("Mariana.txt", "$(questionNumber)" + " " + userAnswer1 + " ")
+      saveToServer("http://www.strokedata.fr", answerString1)
     });
+    saveResults("Mariana.txt", answerString1)
   }
 
   function showSlide(n) {
