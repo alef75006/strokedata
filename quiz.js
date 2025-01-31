@@ -11,21 +11,11 @@
 
         // variable to store the list of possible answers
         const answers1 = [];
-        const answers2 = [];
 
-        for(letter of ["0", "1", "2", "3", "CAN'T SAY"]){
-          // ...add an HTML radio button
+        for (letter of ["YES", "NO", "CAN'T SAY"]) {
           answers1.push(
             `<label>
               <input type="radio" name="question1${questionNumber}" value="${letter}">
-              ${letter} 
-            </label>`
-          );
-        }
-        for (letter of ["YES", "NO", "CAN'T SAY"]) {
-          answers2.push(
-            `<label>
-              <input type="radio" name="question2${questionNumber}" value="${letter}">
               ${letter} 
             </label>`
           );
@@ -35,16 +25,15 @@
         output.push(
           `<div class="slide">
             <div class="questionImage">
-              <img src="../../../data/images_from_videos/numed_faces/face${questionNumber}.jpg" height="200px""></img>
+              <img src="data/Transformed/${questionNumber}.jpg" height="200px""></img>
+            </div>
+            <div class="questionImageRaw">
+              <img src="data/Raw/${questionNumber}.jpg" height="200px""></img>
             </div>
             <div class="questions">
               <div class="questions1">
                 <div class="question1"> ${currentQuestion.question1} </div>
                 <div class="answers1"> ${answers1.join("")} </div>
-              </div>
-              <div class="questions2">
-                <div class="question2"> ${currentQuestion.question2} </div>
-                <div class="answers2"> ${answers2.join("")} </div>
               </div>
             </div>
           </div>`
@@ -78,12 +67,10 @@
 
     // gather answer containers from our quiz
     const answerContainers1 = quizContainer.querySelectorAll('.answers1');
-    const answerContainers2 = quizContainer.querySelectorAll('.answers2');
 
     // Answer string
 
     let answerString1 = "";
-    let answerString2 = "";
 
     // for each question...
     myQuestions.forEach( (currentQuestion, questionNumber) => {
@@ -94,14 +81,9 @@
       const userAnswer1 = (answerContainer1.querySelector(selector1) || {}).value;
       answerString1 += userAnswer1 + " ";
 
-      // Second question
-      const answerContainer2 = answerContainers2[questionNumber];
-      const selector2 = `input[name=question2${questionNumber}]:checked`;
-      const userAnswer2 = (answerContainer2.querySelector(selector2) || {}).value;
-      answerString2 += userAnswer2 + " ";
     });
     // Save results
-    saveResults("Output.txt", answerString1 + "\n" + answerString2)
+    saveResults("Output.txt", answerString1)
   }
 
   function showSlide(n) {
@@ -137,9 +119,7 @@
     const N_IMAGES = 300
     for (let i=0; i < N_IMAGES; i++) {
       questions.push({
-        question1: "How severe is the stroke on NIH scale?",
-        image: "../../../data/images_from_videos/numed/img"+i+".jpg",
-        question2: "Is it similar to a typical clinical case?",
+        question1: "Is the deformation realistic?",
       })
     }
     return questions

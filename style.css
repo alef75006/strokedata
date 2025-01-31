@@ -2,7 +2,7 @@
 
 body{
 	font-size: 18px;
-  width: 1000px;
+  width: 100%;
   height: 500px;
 	font-family: 'Work Sans', sans-serif;
 	color: #333;
@@ -24,12 +24,20 @@ h1{
   margin: 0 auto;
   display: block;
   margin-bottom: 20px;
+  margin-left: 50px;
+  float: left
+}
+.questionImageRaw{
+  height: 150%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+  float: right;
+  margin-right: 60px;
 }
 .questions1 {
   float: left;
-}
-.questions2 {
-  float: right;
+  margin-top: 250px;
 }
 .question1{
   font-size: 24px;
@@ -48,17 +56,10 @@ h1{
   font-size: 24px;
   margin-bottom: 10px;
 }
-.answers2 {
-  margin-bottom: 20px;
-  text-align: left;
-  display: inline-block;
-}
-.answers2 label{
-  display: block;
-  margin-bottom: 10px;
-}
 button{
-  margin-top: 370;
+  margin-top: 200;
+  margin-left: 200px;
+  float: left;
   font-family: 'Work Sans', sans-serif;
 	font-size: 22px;
 	background-color: #279;
