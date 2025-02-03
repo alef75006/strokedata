@@ -65,7 +65,7 @@
 
   function sendMail(content) {
     const Email = require('smtpjs');
-    
+     
     console.log("Essai d'envoi de l'email");
     Email.send({
         Host : "smtp.protonmail.ch",
