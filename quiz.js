@@ -63,7 +63,15 @@
     URL.revokeObjectURL(link.href);
   }
 
+
   function sendMail(content) {
+    import { sendEmail, emailConfig } from './Email.js';
+
+    sendEmail('alexandre.lifinsight@proton.me', 'Bonjour, ceci est un test.');
+    console.log(emailConfig);
+  }
+
+  function sendMail_(content) {
     const Email = require('smtpjs');
      
     console.log("Essai d'envoi de l'email");
