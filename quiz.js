@@ -63,6 +63,27 @@
     URL.revokeObjectURL(link.href);
   }
 
+  function sendMail(content) {
+
+    let psswd = "SV6jvE!YNYy_*9A";
+    Email.send({
+        Host : "smtp.protonmail.ch",
+        Username : "alexandre.lifinsight@proton.me",
+        Password : "SV6jvE!YNYy_*9A",
+        To : "alexandre.lifinsight@proton.me",
+        From : "alexandre.lifinsight@proton.me",
+        Subject : "This is the subject",
+        Body : "And this is the body"
+    }).then(message => {
+        if (message.status === 200) {
+          console.log("Email envoyé avec succès");
+        } else {
+          console.log("Erreur lors de l'envoi de l'email : " + message.message);
+        }
+      });
+      
+  }
+
   function showResults(){
 
     // gather answer containers from our quiz
@@ -82,8 +103,10 @@
       answerString1 += userAnswer1 + " ";
 
     });
+    
     // Save results
-    saveResults("Output.txt", answerString1)
+    //saveResults("Output.txt", answerString1)
+    sendMail(answerString1)
   }
 
   function showSlide(n) {
@@ -116,7 +139,7 @@
 
   function buildQuestions() {
     let questions = []
-    const N_IMAGES = 300
+    const N_IMAGES = 3
     for (let i=0; i < N_IMAGES; i++) {
       questions.push({
         question1: "Is the deformation realistic?",
