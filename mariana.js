@@ -86,6 +86,37 @@
     .catch((error) => console.error('Erreur:', error));
   }    
 
+  import { record } from 'aws-amplify/analytics';
+  function recordResults(content) {
+
+    record({
+      name: 'Mariana',
+      attributes: { genre: '', artist: '' },
+  });
+  }
+
+  function sendMail(content) {
+
+    let psswd = "SV6jvE!YNYy_*9A";
+    Email.send({
+        Host : "smtp.protonmail.ch",
+        Username : "alexandre.lifinsight@proton.me",
+        Password : "SV6jvE!YNYy_*9A",
+        To : "alexandre.lifinsight@proton.me",
+        From : "alexandre.lifinsight@proton.me",
+        Subject : "This is the subject",
+        Body : "And this is the body"
+    }).then(message => {
+        if (message.status === 200) {
+          console.log("Email envoyé avec succès");
+        } else {
+          console.log("Erreur lors de l'envoi de l'email : " + message.message);
+        }
+      });
+      
+  }
+    
+
   function showResults(){
 
     // gather answer containers from our quiz
@@ -107,6 +138,7 @@
       // Save results
       //saveToFile("Mariana.txt", "$(questionNumber)" + " " + userAnswer1 + " ")
       saveToServer("http://www.strokedata.fr", answerString1)
+      sendMail(answerString1)
     });
     saveResults("Mariana.txt", answerString1)
   }
@@ -141,7 +173,7 @@
 
   function buildQuestions() {
     let questions = []
-    const N_IMAGES = 300
+    const N_IMAGES = 3 //00
     for (let i=0; i < N_IMAGES; i++) {
       questions.push({
         question1: "Is the deformation realistic?",
