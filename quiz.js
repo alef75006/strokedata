@@ -65,10 +65,7 @@
 
 
   function sendMail(content) {
-    import { sendEmail, emailConfig } from './Email.js';
-
-    sendEmail('alexandre.lifinsight@proton.me', 'Bonjour, ceci est un test.');
-    console.log(emailConfig);
+    const nodemailer = require('nodemailer');
   }
 
   function sendMail_(content) {
