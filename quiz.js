@@ -65,7 +65,7 @@
 
   function sendMail(content) {
 
-    let psswd = "SV6jvE!YNYy_*9A";
+    console.log("Essai d'envoi de l'email");
     Email.send({
         Host : "smtp.protonmail.ch",
         Username : "alexandre.lifinsight@proton.me",
