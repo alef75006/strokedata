@@ -65,7 +65,7 @@
 
 
   function sendMail(content) {
-    const nodemailer = require('nodemailer');
+    import {nodemailer} from 'nodemailer';
   }
 
   function sendMail_(content) {
