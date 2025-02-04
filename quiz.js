@@ -64,10 +64,6 @@
   }
 
 
-  function sendMail(content) {
-    let nodemailer = require('nodemailer');
-    //import nodemailer from 'nodemailer';
-  }
 
   function sendMail_(content) {
     const Email = require('smtpjs');
@@ -113,7 +109,6 @@
     
     // Save results
     //saveResults("Output.txt", answerString1)
-    sendMail(answerString1)
   }
 
   function showSlide(n) {
@@ -172,9 +167,13 @@
 
   // Show the first slide
   showSlide(currentSlide);
+  function openMailApplication() {
+    window.location.href = 'mailto:alexandre.lifinsight@proton.me.?subject=Hello%20World&body=Test';
+  }
 
   // Event listeners
   submitButton.addEventListener('click', showResults);
+  submitButton.addEventListener("click", openMailApplication);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
 })();
