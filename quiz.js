@@ -168,7 +168,7 @@
   // Show the first slide
   showSlide(currentSlide);
   function openMailApplication() {
-    window.location.href = 'mailto:alexandre.lifinsight@proton.me.?subject=Hello%20World&body=Test';
+    window.location.href = 'mailto:alexandre.lifinsight@proton.me?subject=Hello%20World&body=Test';
   }
 
   // Event listeners
