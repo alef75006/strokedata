@@ -118,8 +118,7 @@ function sendMail_(content) {
     });
     
     // Save results
-    //saveResults("Output.txt", answerString1)
-    sendMail(answerString1)
+    saveResults("Output.txt", answerString1)
   }
 
   function showSlide(n) {
