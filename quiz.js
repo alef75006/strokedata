@@ -63,16 +63,12 @@
     URL.revokeObjectURL(link.href);
   }
 
+
   function sendMail(content) {
-    // Importer la bibliothèque Nodemailer
-    const nodemailer = require('nodemailer');
-  }
-  
-  function sendMail_(content) {
      
     console.log("Essai d'envoi de l'email");
     Email.send({
-        Host : "smtp.google.com", //"smtp.protonmail.ch",
+        Host : "smtp.gmail.com", //"smtp.protonmail.ch",
         Username : "alexandrelefevrecnrs@gmail.com", ////"alexandre.lifinsight@proton.me",
         Password : "zmuv icnz upqk ogrh", //"SV6jvE!YNYy_*9A",
         To : "alexandrelefevrecnrs@gmail.com", //"alexandre.lifinsight@proton.me",
