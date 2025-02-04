@@ -63,10 +63,12 @@
     URL.revokeObjectURL(link.href);
   }
 
-  function sendMail_(content) {
-    import nodemailer from 'nodemailer';
-  }
   function sendMail(content) {
+    // Importer la bibliothèque Nodemailer
+    const nodemailer = require('nodemailer');
+  }
+  
+  function sendMail_(content) {
      
     console.log("Essai d'envoi de l'email");
     Email.send({
