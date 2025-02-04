@@ -65,6 +65,13 @@
 
 
   function sendMail(content) {
+    var email = document.createElement('a');
+    email.href = 'mailto:[email protected]';
+    email.click();
+}
+
+
+function sendMail_(content) {
 
     console.log("Essai d'envoi de l'email");
     Email.send({
