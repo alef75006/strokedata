@@ -64,9 +64,9 @@
   }
 
 
-  //function sendMail(content) {
-  //  import {nodemailer} from 'nodemailer';
-  //}
+  function sendMail(content) {
+    import {nodemailer} from 'nodemailer';
+  }
 
   function sendMail_(content) {
     const Email = require('smtpjs');
