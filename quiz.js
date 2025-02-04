@@ -114,7 +114,7 @@ function sendMail_(content) {
       const answerContainer1 = answerContainers1[questionNumber];
       const selector1 = `input[name=question1${questionNumber}]:checked`;
       const userAnswer1 = (answerContainer1.querySelector(selector1) || {}).value;
-      answerString1 += questionNumber + " " + userAnswer1 + " ";
+      answerString1 += currentQuestion.questionNum + " " + userAnswer1 + " ";
 
     });
     
