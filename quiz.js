@@ -65,8 +65,7 @@
 
 
   function sendMail(content) {
-    //import nodemailer from 'nodemailer';
-    require("nodemailer")
+    import nodemailer from 'nodemailer';
   }
 
   function sendMail_(content) {
