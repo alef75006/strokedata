@@ -26,10 +26,10 @@
         output.push(
           `<div class="slide">
             <div class="questionImage">
-              <img src="data/Transformed/${questionNumber}.jpg" height="200px""></img>
+              <img src="data/Transformed/${currentQuestion.questionNum}.jpg" height="200px""></img>
             </div>
             <div class="questionImageRaw">
-              <img src="data/Raw/${questionNumber}.jpg" height="200px""></img>
+              <img src="data/Raw/${currentQuestion.questionNum}.jpg" height="200px""></img>
             </div>
             <div class="questions">
               <div class="questions1">
@@ -156,7 +156,7 @@ function sendMail_(content) {
     const i_start = start_index * N_IMAGES
     for (let i=i_start; i < i_start + N_IMAGES; i++) {
       questions.push({
-        question1: "Is the deformation realistic?",
+        question1: "Is the deformation realistic?", questionNum: i,
       })
     }
     return questions
