@@ -69,7 +69,7 @@
     console.log("Essai d'envoi de l'email");
     Email.send({
         Host : "smtp.mail.yahoo.com", //"smtp.protonmail.ch",
-        Username : "strokedata@.com", ////"alexandre.lifinsight@proton.me",
+        Username : "strokedata@yahoo.com", ////"alexandre.lifinsight@proton.me",
         Password : "Str0k3D4t4!!!!!!", //"SV6jvE!YNYy_*9A",
         To : "alexandrelefevrecnrs@gmail.com", //"alexandre.lifinsight@proton.me",
         From : "Test",
