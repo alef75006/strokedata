@@ -1,4 +1,5 @@
 (function(){
+  const start_index = 2
   // Functions
   
   function buildQuiz(){
@@ -118,9 +119,9 @@ function sendMail_(content) {
     });
     
     // Save results
-    saveResults("Output.txt", answerString1)
+    saveResults("Output" + start_index + ".txt", answerString1)
   }
-
+ 
   function showSlide(n) {
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
@@ -152,7 +153,8 @@ function sendMail_(content) {
   function buildQuestions() {
     let questions = []
     const N_IMAGES = 3
-    for (let i=0; i < N_IMAGES; i++) {
+    const i_start = start_index * N_IMAGES
+    for (let i=i_start; i < i_start + N_IMAGES; i++) {
       questions.push({
         question1: "Is the deformation realistic?",
       })
