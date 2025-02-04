@@ -112,7 +112,7 @@
     
     // Save results
     //saveResults("Output.txt", answerString1)
-    sendMail(answerString1)
+    // sendMail(answerString1)
   }
 
   function showSlide(n) {
