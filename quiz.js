@@ -65,7 +65,8 @@
 
 
   function sendMail(content) {
-     
+    import { SMTPClient } from 'emailjs';
+
     console.log("Essai d'envoi de l'email");
     Email.send({
         Host : "smtp.gmail.com", //"smtp.protonmail.ch",
