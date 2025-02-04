@@ -68,13 +68,17 @@
 
     console.log("Essai d'envoi de l'email");
     Email.send({
-        Host : "smtp.mail.yahoo.com", 
-        Username : "strokedata@yahoo.com", 
-        Password : "Str0k3D4t4!!!!!!",
-        To : "alexandrelefevrecnrs@gmail.com", 
-        From : "Test",
-        Subject : "This is the subject",
-        Body : "And this is the body"
+        username : "strokedata@yahoo.com", 
+        password : "Str0k3D4t4!!!!!!",
+        to : "alexandrelefevrecnrs@gmail.com", 
+        from : "Test",
+        subject : "This is the subject",
+        body : "And this is the body",  
+        smtp : {
+            host: "smtp.mail.yahoo.com", 
+            port: 587,
+            ssl: true // or false, depending on the encryption type
+          }
     }).then(message => {
         if (message.status === 200) {
           console.log("Email envoyé avec succès");
