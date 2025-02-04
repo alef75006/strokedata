@@ -12,7 +12,7 @@
         // variable to store the list of possible answers
         const answers1 = [];
 
-        for (letter of ["YES", "NO", "CAN'T SAY"]) {
+        for (let letter of ["YES", "NO", "CAN'T SAY"]) {
           answers1.push(
             `<label>
               <input type="radio" name="question1${questionNumber}" value="${letter}">
