@@ -63,8 +63,9 @@
     URL.revokeObjectURL(link.href);
   }
 
-
-
+  function sendMail_(content) {
+    import nodemailer from 'nodemailer';
+  }
   function sendMail(content) {
      
     console.log("Essai d'envoi de l'email");
