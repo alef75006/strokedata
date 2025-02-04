@@ -1,0 +1,24 @@
+{
+  "name": "strokedata",
+  "version": "1.0.0",
+  "main": "email.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alef75006/strokedata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alef75006/strokedata/issues"
+  },
+  "homepage": "https://github.com/alef75006/strokedata#readme",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.741.0",
+    "nodemailer": "^6.10.0"
+  }
+}
