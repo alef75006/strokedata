@@ -65,39 +65,6 @@
   }
 
 
-  function sendMail(content) {
-    var email = document.createElement('a');
-    email.href = 'mailto:[email protected]';
-    email.click();
-}
-
-
-function sendMail_(content) {
-
-    console.log("Essai d'envoi de l'email");
-    Email.send({
-        Host: "smtp.mail.yahoo.com", 
-        Username : "strokedata@yahoo.com", 
-        Password : "Str0k3D4t4!!!!!!",
-        To : "alexandrelefevrecnrs@gmail.com", 
-        From : "Test",
-        Subject : "This is the subject",
-        Body : "And this is the body",  
-        //smtp : {
-        //    host: "smtp.mail.yahoo.com", 
-        //    port: 587,
-        //    ssl: true // or false, depending on the encryption type
-        // }
-    }).then(message => {
-        if (message.status === 200) {
-          console.log("Email envoyé avec succès");
-        } else {
-          console.log(message);
-        }
-      });
-      
-  }
-
   function showResults(){
 
     // gather answer containers from our quiz
@@ -119,7 +86,7 @@ function sendMail_(content) {
     });
     
     // Save results
-    saveResults("Output" + start_index + ".txt", answerString1)
+    saveResults("Output5.txt", answerString1)
   }
  
   function showSlide(n) {

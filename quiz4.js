@@ -86,7 +86,7 @@
     });
     
     // Save results
-    saveResults("Output" + start_index + ".txt", answerString1)
+    saveResults("Output4.txt", answerString1)
   }
  
   function showSlide(n) {
