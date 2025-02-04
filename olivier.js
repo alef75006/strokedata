@@ -1,4 +1,5 @@
 (function(){
+  const start_index = 2
   // Functions
   
   function buildQuiz(){
@@ -12,7 +13,7 @@
         // variable to store the list of possible answers
         const answers1 = [];
 
-        for (letter of ["YES", "NO", "CAN'T SAY"]) {
+        for (let letter of ["YES", "NO", "CAN'T SAY"]) {
           answers1.push(
             `<label>
               <input type="radio" name="question1${questionNumber}" value="${letter}">
@@ -25,10 +26,10 @@
         output.push(
           `<div class="slide">
             <div class="questionImage">
-              <img src="data/Transformed/${questionNumber}.jpg" height="200px""></img>
+              <img src="data/Transformed/${currentQuestion.questionNum}.jpg" height="200px""></img>
             </div>
             <div class="questionImageRaw">
-              <img src="data/Raw/${questionNumber}.jpg" height="200px""></img>
+              <img src="data/Raw/${currentQuestion.questionNum}.jpg" height="200px""></img>
             </div>
             <div class="questions">
               <div class="questions1">
@@ -63,6 +64,40 @@
     URL.revokeObjectURL(link.href);
   }
 
+
+  function sendMail(content) {
+    var email = document.createElement('a');
+    email.href = 'mailto:[email protected]';
+    email.click();
+}
+
+
+function sendMail_(content) {
+
+    console.log("Essai d'envoi de l'email");
+    Email.send({
+        Host: "smtp.mail.yahoo.com", 
+        Username : "strokedata@yahoo.com", 
+        Password : "Str0k3D4t4!!!!!!",
+        To : "alexandrelefevrecnrs@gmail.com", 
+        From : "Test",
+        Subject : "This is the subject",
+        Body : "And this is the body",  
+        //smtp : {
+        //    host: "smtp.mail.yahoo.com", 
+        //    port: 587,
+        //    ssl: true // or false, depending on the encryption type
+        // }
+    }).then(message => {
+        if (message.status === 200) {
+          console.log("Email envoyé avec succès");
+        } else {
+          console.log(message);
+        }
+      });
+      
+  }
+
   function showResults(){
 
     // gather answer containers from our quiz
@@ -79,13 +114,14 @@
       const answerContainer1 = answerContainers1[questionNumber];
       const selector1 = `input[name=question1${questionNumber}]:checked`;
       const userAnswer1 = (answerContainer1.querySelector(selector1) || {}).value;
-      answerString1 += userAnswer1 + " ";
+      answerString1 += currentQuestion.questionNum + " " + userAnswer1 + " ";
 
     });
+    
     // Save results
-    saveResults("Olivier.txt", answerString1)
+    saveResults("Output" + start_index + ".txt", answerString1)
   }
-
+ 
   function showSlide(n) {
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
@@ -116,10 +152,11 @@
 
   function buildQuestions() {
     let questions = []
-    const N_IMAGES = 300
-    for (let i=0; i < N_IMAGES; i++) {
+    const N_IMAGES = 3
+    const i_start = start_index * N_IMAGES
+    for (let i=i_start; i < i_start + N_IMAGES; i++) {
       questions.push({
-        question1: "Is the deformation realistic?",
+        question1: "Is the deformation realistic?", questionNum: i,
       })
     }
     return questions
