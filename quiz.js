@@ -65,13 +65,12 @@
 
 
   function sendMail(content) {
-    import SMTPClient  from 'emailjs';
 
     console.log("Essai d'envoi de l'email");
     Email.send({
-        Host : "smtp.gmail.com", //"smtp.protonmail.ch",
-        Username : "alexandrelefevrecnrs@gmail.com", ////"alexandre.lifinsight@proton.me",
-        Password : "zmuv icnz upqk ogrh", //"SV6jvE!YNYy_*9A",
+        Host : "smtp.mail.yahoo.com", //"smtp.protonmail.ch",
+        Username : "strokedata@.com", ////"alexandre.lifinsight@proton.me",
+        Password : "Str0k3D4t4!!!!!!", //"SV6jvE!YNYy_*9A",
         To : "alexandrelefevrecnrs@gmail.com", //"alexandre.lifinsight@proton.me",
         From : "Test",
         Subject : "This is the subject",
