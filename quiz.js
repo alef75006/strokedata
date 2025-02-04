@@ -83,7 +83,7 @@
         if (message.status === 200) {
           console.log("Email envoyé avec succès");
         } else {
-          console.log(message.message);
+          console.log(message);
         }
       });
       
