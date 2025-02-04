@@ -70,11 +70,11 @@
      
     console.log("Essai d'envoi de l'email");
     Email.send({
-        Host : "smtp.protonmail.ch",
-        Username : "alexandre.lifinsight@proton.me",
-        Password : "SV6jvE!YNYy_*9A",
-        To : "alexandre.lifinsight@proton.me",
-        From : "alexandre.lifinsight@proton.me",
+        Host : "smtp.google.com", //"smtp.protonmail.ch",
+        Username : "alexandrelefevrecnrs@gmail.com", ////"alexandre.lifinsight@proton.me",
+        Password : "J'4d0r3+M3s+3nf4nts!", //"SV6jvE!YNYy_*9A",
+        To : "alexandrelefevrecnrs@gmail.com", //"alexandre.lifinsight@proton.me",
+        From : "Test",
         Subject : "This is the subject",
         Body : "And this is the body"
     }).then(message => {
