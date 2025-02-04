@@ -152,7 +152,7 @@ function sendMail_(content) {
 
   function buildQuestions() {
     let questions = []
-    const N_IMAGES = 3
+    const N_IMAGES = 90
     const i_start = start_index * N_IMAGES
     for (let i=i_start; i < i_start + N_IMAGES; i++) {
       questions.push({
