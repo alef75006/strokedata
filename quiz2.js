@@ -124,7 +124,7 @@
     for (let i=i_start; i < i_start + N_IMAGES; i++) {
         let j = i - i_start + 1
       questions.push({
-        question1: "Is the deformation realistic? (" + j + "/" + N_images + ")", questionNum: i,
+        question1: "Is the deformation realistic? (" + j + "/" + N_IMAGES + ")", questionNum: i,
       })
     }
     return questions
