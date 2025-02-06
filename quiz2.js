@@ -123,8 +123,11 @@
     const i_start = start_index * N_IMAGES
     for (let i=i_start; i < i_start + N_IMAGES; i++) {
         let j = i - i_start + 1
+      //questions.push({
+      //  question1: "Is the deformation realistic? (" + j + "/" + N_IMAGES + ")", questionNum: i,
+      //})
       questions.push({
-        question1: "Is the deformation realistic? (" + j + "/" + N_IMAGES + ")", questionNum: i,
+        question1: "Is the deformation realistic?", questionNum: i,
       })
     }
     return questions
