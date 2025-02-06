@@ -1,5 +1,5 @@
 (function(){
-  const start_index = 3
+  const start_index = 2
   // Functions
   
   function buildQuiz(){
